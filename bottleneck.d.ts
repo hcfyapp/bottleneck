@@ -1,4 +1,4 @@
-declare module "bottleneck" {
+declare module "@hcfy/bottleneck" {
     namespace Bottleneck {
     type ConstructorOptions = {
         /**
