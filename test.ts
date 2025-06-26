@@ -1,6 +1,6 @@
 /// <reference path="bottleneck.d.ts" />
 
-import Bottleneck from "bottleneck";
+import Bottleneck from "@hcfy/bottleneck";
 // import * as assert from "assert";
 function assert(b: boolean): void { }
 

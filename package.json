@@ -1,9 +1,23 @@
 {
   "name": "@hcfy/bottleneck",
-  "version": "2.20.0",
+  "version": "2.20.2",
   "description": "Distributed task scheduler and rate limiter",
   "main": "lib/index.js",
   "typings": "bottleneck.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "types": "./bottleneck.d.ts"
+    },
+    "./light": {
+      "require": "./light.js",
+      "types": "./light.d.ts"
+    },
+    "./es5": {
+      "require": "./es5.js",
+      "types": "./bottleneck.d.ts"
+    }
+  },
   "scripts": {
     "test": "mocha test",
     "test-all": "./scripts/test_all.sh"
