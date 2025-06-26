@@ -16,7 +16,7 @@ const exclude = [
   'Scripts.js'
 ];
 
-export default {
+export default [{
   input: 'lib/index.js',
   output: {
     name: 'Bottleneck',
@@ -41,4 +41,28 @@ export default {
     resolve(),
     commonjs()
   ]
-};
+},{
+  input: 'lib/index.js',
+  output: {
+    file: 'light.mjs',
+    sourcemap: false,
+    globals: {},
+    format: 'esm',
+    banner
+  },
+  external: [],
+  plugins: [
+    json(),
+    {
+      load: id => {
+        const chunks = id.split('/');
+        const file = chunks[chunks.length - 1];
+        if (exclude.indexOf(file) >= 0) {
+          return missing
+        }
+      }
+    },
+    resolve(),
+    commonjs()
+  ]
+}];
